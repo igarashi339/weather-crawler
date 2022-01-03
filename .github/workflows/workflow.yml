@@ -1,7 +1,6 @@
-name: dticket-scraper
+name: weather-crawler
 on:
-  schedule:
-    - cron: '*/30 * * * *'
+  workflow_dispatch:
 jobs:
   build:
     name: scraping
@@ -10,5 +9,5 @@ jobs:
       - uses: actions/checkout@v2
       - run: docker-compose up -d
       - run: sleep 5
-      - run: docker-compose exec -T app python main.py
+      - run: docker-compose exec -T develop python3 main.py
       - run: docker-compose down
