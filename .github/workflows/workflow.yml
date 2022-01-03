@@ -1,0 +1,14 @@
+name: dticket-scraper
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+jobs:
+  build:
+    name: scraping
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker-compose up -d
+      - run: sleep 5
+      - run: docker-compose exec -T app python main.py
+      - run: docker-compose down
