@@ -4,4 +4,6 @@ services:
     build: .
     volumes:
       - ./src:/src
+    environment:
+      DATABASE_URL: '${DATABASE_URL}'
     tty: true

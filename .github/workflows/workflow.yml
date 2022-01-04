@@ -1,6 +1,9 @@
 name: weather-crawler
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+env:
+  DATABASE_URL: ${{secrets.DATABASE_URL}}
 jobs:
   build:
     name: scraping
