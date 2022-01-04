@@ -1,7 +1,8 @@
 name: weather-crawler
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 0 * * *'
 env:
   DATABASE_URL: ${{secrets.DATABASE_URL}}
 jobs:
