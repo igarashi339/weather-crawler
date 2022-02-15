@@ -13,3 +13,4 @@ exec:
 .PHONY: build
 build:
 	docker build . --no-cache
+	
